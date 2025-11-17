@@ -908,4 +908,231 @@
                     <div class="project-tags">
                         <span class="tag">Vue.js</span>
                         <span class="tag">Chart.js</span>
-                        <span class="tag
+                        <span class="tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    🎮
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">🔗</a>
+                        <a href="#" class="project-btn">💻</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Social Media App</h3>
+                    <p>Modern social platform with real-time messaging and content sharing capabilities</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Socket.io</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    🏥
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">🔗</a>
+                        <a href="#" class="project-btn">💻</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Healthcare Management</h3>
+                    <p>Comprehensive healthcare system for patient records and appointment scheduling</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    🎨
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">🔗</a>
+                        <a href="#" class="project-btn">💻</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Design Portfolio</h3>
+                    <p>Creative portfolio website with smooth animations and interactive elements</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    📚
+                    <div class="project-overlay">
+                        <a href="#" class="project-btn">🔗</a>
+                        <a href="#" class="project-btn">💻</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Learning Platform</h3>
+                    <p>Online education platform with video streaming and progress tracking</p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Redux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's Work Together</h2>
+            <p class="section-subtitle">Have a project in mind? Let's discuss how we can collaborate</p>
+        </div>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Project Inquiry" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links" style="justify-content: center; margin-bottom: 20px;">
+                <a href="https://www.linkedin.com/in/albert-christiann/" class="social-btn" target="_blank">💼</a>
+                <a href="https://github.com/KeijiChoco14" class="social-btn" target="_blank">💻</a>
+                <a href="mailto:albert23ti@mahasiswa.pcr.ac.id" class="social-btn">📧</a>
+            </div>
+            <p class="footer-text">© 2024 Albert Christian. Crafted with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon!`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.skill-card, .project-card, .contact-container').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Skill bars animation trigger
+        const skillBars = document.querySelectorAll('.skill-fill');
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fillBar 2s ease forwards';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => skillObserver.observe(bar));
+    </script>
+</body>
+</html>
